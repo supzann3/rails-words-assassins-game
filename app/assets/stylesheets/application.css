@@ -25,7 +25,7 @@
 body {
   background-color: #70BBD9;
   text-align: center;
-  font-family: 'open sans';
+  font-family: font-family: 'Myriad Pro','Helvetica Neue', Helvetica;
   padding: 2%;
 	color: white;
 }
@@ -39,7 +39,15 @@ body {
 	line-height: 0;
 }
 
-.player_status_container, .individual_game_container {
+.super_wrapper {
+  width: 29%;
+  float: left;
+  margin-right: 2%;
+  margin-left: 2%;
+  margin-top: 30px;
+}
+
+.individual_game_container {
   width: 29%;
   float: left;
   margin-bottom: 3em;
@@ -49,31 +57,19 @@ body {
 	border: 1px black solid;
 }
 
-.player_wrapper {
-  width: 29%;
-  float: left;
-  margin-left: 2%;
-  margin-right: 2%;
-  border: 1px black solid;
-}
-
 .player_name, .game_name {
   vertical-align: center;
   font-size: 2em;
   width: 100%;
   background-color: #3498DB;
 	color: white;
+  border-radius: 5px;
 }
-
 
 .status_bar {
   background-color: #3498DB;
 	color: white;
-}
-
-.player_status, .player_kills {
-  border-right: 2px white;
-  width: 50%;
+  border-radius: 5px;
 }
 
 .player_status, .player_kills {
@@ -82,12 +78,20 @@ body {
   float: left;
 }
 
+.kill_button {
+  border-radius: 5px;
+  padding: 15px 25px;
+  font-size: 22px;
+  margin: 20px;
+  color: #fff;
+  background-color: #e67e22;
+}
 .kill_button_wrapper {
   float: right;
   margin: auto;
   clear: both;
   width: 100%;
-  background-color: #E74C3C;
+  background-color: #F39C12;
   font-size: 1.5em;
   height: 45px;
 }
@@ -97,7 +101,7 @@ body {
   margin: auto;
   clear: both;
   width: 100%;
-  background-color: #F39C12;
+  background-color: #E74C3C;
   font-size: 1.5em;
   height: 45px;
 	color: white;
@@ -123,6 +127,7 @@ body {
 .ninja {
 	height: 200px;
   margin: auto;
+  margin-top: 2em;
 }
 
 .header {
@@ -156,3 +161,30 @@ ul {
 }
 
 .game_name:link {}
+
+.initial_input {
+ font-family: 'Myriad Pro','Helvetica Neue', Helvetica;
+  font-weight:bold;
+  font-size: 25px;
+  text-shadow: 0px 1px 2px rgba(255,255,255,.5);
+  color: #444;
+  text-align:center;
+}
+
+.semi_button {
+  border-radius: 5px;
+  padding: 15px 25px;
+  font-size: 22px;
+  margin: 20px;
+  color: #fff;
+  background-color: #e67e22;
+}
+.input_box{
+  margin: 15px;
+	font-family: 'Myriad Pro','Helvetica Neue', Helvetica;
+  font-weight:bold;
+  font-size: 25px;
+  text-shadow: 0px 1px 2px rgba(255,255,255,.5);
+  color: #444;
+  text-align:center;
+}

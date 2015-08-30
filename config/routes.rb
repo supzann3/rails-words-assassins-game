@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+
+
   get '/games/new' => 'games#new'
-  # root '/games/new'
+
 
   resources :games, only: [:index, :create, :show]
   resources :players, only: [:index, :new]
@@ -12,14 +14,7 @@ Rails.application.routes.draw do
   delete '/players/:id' => 'players#delete'
 
   post '/current_users' => 'current_users#new'
-
-
-
-
-  # post 'game/enter_players'=> 'game#enter_players'
-  #
-  # get 'players/index' => 'player#index'
-  # delete 'players/index' => 'player#delete'
+  get '/', :to => redirect('/index.html')
 
 
 

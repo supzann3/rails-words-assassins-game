@@ -1,15 +1,7 @@
-<div class='header clearfix'>
-
-  <%= image_tag "logo.jpg", :class => 'logo_image'%>
-  <div class='game_info'>
-    Welcome to the information page for <%= @game.name.upcase %>.  Below, you can find the status for each player.  If you "kill" a player using the "KILL ME" on this page, that player will receive our condolences and a request for confirmation.  No player will be removed from the game unless they have confirmed via email.
-  </div>
-
-</div>
-
 <div class="content clearfix">
   <% @game.players.sort.each do |player| %>
-    <div class='player_status_container clearfix'>
+  <div class = "super_wrapper clearfix" >
+    <div class='player_status_container'>
       <div class='player_name'>
         <%= player.name %>
       </div>
@@ -32,20 +24,19 @@
           <%= player.kills %> KILLS
         </div>
       </div>
-      <% if player.alive? %>
-      <div class ='kill_button_wrapper'>
-        <form action="/players/delete" method="post">
-          <input type="hidden" name="_method" value="DELETE">
-          <input type="hidden" name="player[id]" value="<%= player.id %>">
-          <input type="hidden" name="game[id]" value="<%= @game.id %>">
-          <input class ='kill_button_wrapper' type="submit" value="KILL ME">
-        </form>
-      </div>
-      <% else %>
-      <div class ='dead_button_wrapper'>
-        I'M ALREADY DEAD
-      </div>
-      <% end %>
     </div>
+    <% if player.alive? %>
+      <form action="/players/delete" method="post">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="hidden" name="player[id]" value="<%= player.id %>">
+        <input type="hidden" name="game[id]" value="<%= @game.id %>">
+        <input class ='kill_button' type="submit" value="KILL ME">
+      </form>
+    <% else %>
+    <div class ='kill_button_dead'>
+      I'M ALREADY DEAD
+    </div>
+    <% end %>
+  </div>
   <% end %>
 </div>
