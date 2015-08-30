@@ -6,7 +6,6 @@ class ReceivedEmail < ActiveRecord::Base
 
   def self.check_email
     @@gmail.inbox.all.each do |email|
-      # binding.pry
       re = ReceivedEmail.new
       sender = (Player.find_by email: email.message.from)
 

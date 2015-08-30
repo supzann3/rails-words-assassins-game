@@ -1,0 +1,16 @@
+<div class="content clearfix">
+  <% @games.each do |game| %>
+      <div class="individual_game_container">
+        <div class='game_name'>
+          <%= link_to game.name.upcase, game_path(game) %>
+        </div>
+        <div class='list_players'>
+          <ul>
+            <% game.players.each do |player| %>
+              <li><%= player.name %> - <%= player.alive? ? "ALIVE" : "DECEASED" %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+  <% end %>
+</div>
