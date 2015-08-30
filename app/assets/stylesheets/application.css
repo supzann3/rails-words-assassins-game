@@ -23,7 +23,7 @@
 }
 
 body {
-  background-color: #70BBD9;
+  background-color: #53BCDD;
   text-align: center;
   font-family: 'Myriad Pro','Helvetica Neue', Helvetica;
   padding: 2%;
@@ -48,11 +48,11 @@ body {
 }
 
 .individual_game_container {
-  width: 29%;
+  width: 40%;
   float: left;
   margin-bottom: 3em;
-  margin-right: 2%;
-  margin-left: 2%;
+  margin-right: 5%;
+  margin-left: 5%;
 	background-color: white;
   border-radius: 15px;
 }
@@ -78,7 +78,7 @@ body {
 .status_bar {
   background-color: #3498DB;
 	color: white;
-  border-radius: 5px;
+  border-radius: 0px 0px 15px 15px;
 }
 
 .player_status, .player_kills {
@@ -88,6 +88,15 @@ body {
 }
 
 .kill_button {
+  border-radius: 5px;
+  padding: 15px 25px;
+  font-size: 22px;
+  margin: 20px;
+  color: #fff;
+  background-color: #e67e22;
+}
+
+.kill_button_dead {
   border-radius: 5px;
   padding: 15px 25px;
   font-size: 22px;
@@ -138,9 +147,9 @@ body {
 }
 
 .content {
-  width: 85%;
+  width: 80%;
   clear: both;
-  margin: 15%
+  margin: auto;
 }
 
 .list_players {
@@ -165,7 +174,22 @@ ul {
   color: white;
 }
 
-.initial_input {
+.game_index_title {
+  font-weight:bold;
+  font-size: 4em;
+  text-shadow: 0px 1px 2px rgba(255,255,255,.5);
+  color: #444;
+  text-align: center;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.player_status_container {
+  background-color: white;
+  border-radius: 15px;
+}
+
+.initial_input, {
  font-family: 'Myriad Pro','Helvetica Neue', Helvetica;
   font-weight:bold;
   font-size: 25px;

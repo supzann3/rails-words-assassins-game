@@ -1,3 +1,7 @@
+<div class="game_index_title">
+Your Games
+</div>
+
 <div class="content clearfix">
   <% @games.each do |game| %>
     <% if CurrentUser.last.is_a_player_of(game) %>
