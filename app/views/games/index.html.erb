@@ -1,5 +1,13 @@
+<div class='header clearfix'>
+  <%= image_tag "logo.jpg", :class => 'logo_image'%>
+  <div class='game_info'>
+    Welcome to the main page for Words Assassins games.
+  </div>
+</div>
+
 <div class="content clearfix">
   <% @games.each do |game| %>
+    <% if CurrentUser.last.is_a_player_of(game) %>
       <div class="individual_game_container">
         <div class='game_name'>
           <%= link_to game.name.upcase, game_path(game) %>
@@ -12,5 +20,6 @@
           </ul>
         </div>
       </div>
+    <% end %>
   <% end %>
 </div>

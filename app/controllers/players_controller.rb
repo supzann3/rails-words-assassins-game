@@ -17,4 +17,8 @@ class PlayersController < ApplicationController
     redirect_to "/games/#{game_id}"
   end
 
+  def current_user
+    Current_user.new(params[email])
+  end
+
 end

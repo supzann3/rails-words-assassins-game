@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   post 'game_players/new' => 'game_players#new'
   delete '/players/:id' => 'players#delete'
 
+  post '/current_users' => 'current_users#new'
+
 
 
 
