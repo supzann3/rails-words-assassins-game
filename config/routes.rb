@@ -1,12 +1,21 @@
 Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  root 'welcome#index'
+  get '/games/new' => 'games#new'
+  # root '/games/new'
 
-  resources :games, only: [:index, :new, :create,]
-  resources :players
+  resources :games, only: [:index, :create, :show]
+  resources :players, only: [:index, :new]
 
-  # get 'game/new' => 'player#new'
+
+  get '/games/new' => 'games#new'
+  post '/players/new' => 'players#new'
+  post 'game_players/new' => 'game_players#new'
+
+  post '/players/kill' => 'players#delete'
+
+
+
   # post 'game/enter_players'=> 'game#enter_players'
   #
   # get 'players/index' => 'player#index'

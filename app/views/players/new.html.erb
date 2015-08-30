@@ -1,4 +1,4 @@
-<form action="/status" method="post">
+<form action="/game_players/new" method="post">
   <% @number.times do %>
   <div>
     <label for="name">Name</label>
@@ -7,5 +7,6 @@
     <input id="email" type="text" name="player[email][]" >
   </div>
   <%end%>
+  <input type="hidden" name="game[id]" value="<%= @game_id %>">
   <input type="submit" value="Enter Players">
 </form>

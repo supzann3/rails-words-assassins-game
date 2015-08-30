@@ -4,8 +4,12 @@ class GamesController < ApplicationController
     @games = Game.all
   end
 
-  def delete
+  def create
     @number = params["number"].to_i
+  end
+
+  def show
+    @players = Game.find(:id).all 
   end
 
 end
