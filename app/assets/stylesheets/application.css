@@ -25,7 +25,7 @@
 body {
   background-color: #70BBD9;
   text-align: center;
-  font-family: font-family: 'Myriad Pro','Helvetica Neue', Helvetica;
+  font-family: 'Myriad Pro','Helvetica Neue', Helvetica;
   padding: 2%;
 	color: white;
 }
@@ -54,16 +54,25 @@ body {
   margin-right: 2%;
   margin-left: 2%;
 	background-color: white;
-	border: 1px black solid;
+  border-radius: 15px;
 }
 
 .player_name, .game_name {
   vertical-align: center;
   font-size: 2em;
   width: 100%;
-  background-color: #3498DB;
 	color: white;
-  border-radius: 5px;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.player_name {
+  background-color: #3498DB;
+}
+
+.game_name {
+  background-color: #e67e22;
+  margin-bottom: 15px;
+  padding: 15px;
 }
 
 .status_bar {
@@ -86,25 +95,9 @@ body {
   color: #fff;
   background-color: #e67e22;
 }
-.kill_button_wrapper {
-  float: right;
-  margin: auto;
-  clear: both;
-  width: 100%;
-  background-color: #F39C12;
-  font-size: 1.5em;
-  height: 45px;
-}
 
-.kill_button_wrapper:hover {
-  float: right;
-  margin: auto;
-  clear: both;
-  width: 100%;
+.kill_button:hover {
   background-color: #E74C3C;
-  font-size: 1.5em;
-  height: 45px;
-	color: white;
 }
 
 .dead_button_wrapper {
@@ -145,8 +138,9 @@ body {
 }
 
 .content {
-  width: 100%;
-  clear: both
+  width: 85%;
+  clear: both;
+  margin: 15%
 }
 
 .list_players {
@@ -158,9 +152,18 @@ ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  padding-bottom: 25px;
 }
 
-.game_name:link {}
+.game_name a:link {
+  text-decoration: none;
+  color: white;
+}
+
+.game_name a:visited {
+  text-decoration: none;
+  color: white;
+}
 
 .initial_input {
  font-family: 'Myriad Pro','Helvetica Neue', Helvetica;
