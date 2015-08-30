@@ -1,7 +1,11 @@
-<div class="initial_input">
-<form action="/players" method="post">
- <h2> <label>Email</label> </br> <h2>
- <input type = "text" class= "input_box" name = "title"> </br>
-  <input class="semi_button" type = "submit" value = "Enter Email!">
-</form>
-</div>
+<nav>
+  <ul>
+    <li>
+       <li>
+       <%=link_to "CREATE A GAME", games_new_path%>
+    </li>
+    <li>
+      <%=link_to "VIEW A GAME", games_path%>
+    </li>
+  </ul>
+</nav>
