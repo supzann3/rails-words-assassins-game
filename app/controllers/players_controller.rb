@@ -11,10 +11,10 @@ class PlayersController < ApplicationController
   end
 
   def delete
-    player_id = params['player']['id']
-    game_id = params['game']['id']
-    Player.find(id).dies
-    redirect "/games/#{id}/show"
+    player_id = params['player']['id'].to_i
+    game_id = params['game']['id'].to_i
+    Player.find(player_id).confirm_death
+    redirect_to "/games/#{game_id}"
   end
 
 end

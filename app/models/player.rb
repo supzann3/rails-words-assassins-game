@@ -40,4 +40,8 @@ class Player < ActiveRecord::Base
     self.assign_word
   end
 
+  def confirm_death
+    Email.new.confirmation_of_death_email(email, assassin.name, word)
+  end
+
 end

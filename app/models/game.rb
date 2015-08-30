@@ -11,11 +11,13 @@ class Game < ActiveRecord::Base
       x.starting_conditions
     end
     initial_victim_id_assignment
+    first_email
   end
 
   def initial_victim_id_assignment
     scramble = players.shuffle
-    players_offset = scramble.unshift(players[-1])[0..-2]
+    players_offset = scramble.rotate
+    # byebug
     Hash[scramble.zip(players_offset)].each do |assassin, victim|
       assassin.update_attribute(:victim_id, victim.id)
     end

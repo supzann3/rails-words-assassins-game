@@ -7,12 +7,10 @@ Rails.application.routes.draw do
   resources :games, only: [:index, :create, :show]
   resources :players, only: [:index, :new]
 
-
-  get '/games/new' => 'games#new'
   post '/players/new' => 'players#new'
   post 'game_players/new' => 'game_players#new'
-  post 'players/delete' => 'players#delete'
-  get 'players/delete'=> 'players#delete'
+  delete '/players/:id' => 'players#delete'
+
 
 
 

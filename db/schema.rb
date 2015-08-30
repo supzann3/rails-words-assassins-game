@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20150829210350) do
     t.string   "subject"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "player_id"
   end
 
 end

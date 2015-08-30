@@ -1,4 +1,4 @@
-class ReceiveEmail < ActiveRecord::Base
+class ReceivedEmail < ActiveRecord::Base
   belongs_to :player
 
   @@keys = YAML.load_file('keys.yml')
@@ -7,16 +7,16 @@ class ReceiveEmail < ActiveRecord::Base
   def self.check_email
     @@gmail.inbox.all.each do |email|
       # binding.pry
-      re = ReceiveEmail.new
+      re = ReceivedEmail.new
       sender = (Player.find_by email: email.message.from)
 
       if !!sender
-        re.subject = email.subject
-        re.player_id = sender.id
+        re.update_attribute(:subject, email.subject)
+        re.update_attribute(:player_id, sender.id)
         sender.dies if re.contains_dead_words?
-        sender.victim.send_death_notice if re.contains_victory_words?
+        sender.victim.confirm_death if re.contains_victory_words?
       end
-
+      email.delete!
     end
   end
 

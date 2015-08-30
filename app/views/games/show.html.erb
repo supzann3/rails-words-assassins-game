@@ -1,13 +1,14 @@
-<div class = 'header clearfix'>
-    <div class = 'logo_image'>
-      <%= image_tag "logo.jpg" %>
-    </div>
+<div class='header clearfix'>
+
+  <%= image_tag "logo.jpg", :class => 'logo_image'%>
+  <div class='game_info'>
+    Welcome to the information page for <%= @game.name.upcase %>.  Below, you can find the status for each player.  If you "kill" a player using the "KILL ME" on this page, that player will receive our condolences and a request for confirmation.  No player will be removed from the game unless they have confirmed via email.
   </div>
 
-<div class="content clearfix">
+</div>
 
-<% @game.players.sort.each do |player| %>
-  <!-- <div class='player_wrapper clearfix'> -->
+<div class="content clearfix">
+  <% @game.players.sort.each do |player| %>
     <div class='player_status_container clearfix'>
       <div class='player_name'>
         <%= player.name %>
@@ -46,7 +47,5 @@
       </div>
       <% end %>
     </div>
-  <!-- </div> -->
-<% end %>
-
+  <% end %>
 </div>
