@@ -1,5 +1,5 @@
 class Player < ActiveRecord::Base
-  belongs_to :game_player
+  has_many :game_players
   has_many :games, through: :game_players
   has_many :received_emails
 
@@ -32,6 +32,12 @@ class Player < ActiveRecord::Base
   def reassign_victim_upon_successful_assassination
     assassin.update_attribute(:victim_id, self.victim_id)
     self.update_attribute(:victim_id, nil)
+  end
+
+  def starting_conditions
+    self.update_attribute(:alive?, true)
+    self.update_attribute(:kills, 0)
+    self.assign_word
   end
 
 end

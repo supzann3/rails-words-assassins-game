@@ -10,10 +10,11 @@ class PlayersController < ApplicationController
     @number = params["number"].to_i
   end
 
-  def destroy
-    id = params['player']['id']
+  def delete
+    player_id = params['player']['id']
+    game_id = params['game']['id']
     Player.find(id).dies
-    redirect '/players/index'
+    redirect "/games/#{id}/show"
   end
 
 end

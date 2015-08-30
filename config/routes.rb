@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   get '/games/new' => 'games#new'
   post '/players/new' => 'players#new'
   post 'game_players/new' => 'game_players#new'
-
-  post '/players/kill' => 'players#delete'
+  post 'players/delete' => 'players#delete'
+  get 'players/delete'=> 'players#delete'
 
 
 

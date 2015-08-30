@@ -1,10 +1,12 @@
 <div class = 'header clearfix'>
-    <img class = 'logo_image' src='images/logo.jpg'>
+    <div class = 'logo_image'>
+      <%= image_tag "logo.jpg" %>
+    </div>
   </div>
 
 <div class="content clearfix">
 
-<% @players.each do |player| %>
+<% @game.players.sort.each do |player| %>
   <!-- <div class='player_wrapper clearfix'> -->
     <div class='player_status_container clearfix'>
       <div class='player_name'>
@@ -12,9 +14,13 @@
       </div>
       <div class='ninja picture'>
         <% if player.alive? %>
-          <img class = 'ninja' src='images/alive.png'>
+          <div class = 'ninja'>
+            <%= image_tag "alive.png" %>
+          </div>
         <% else %>
-        <img class = 'ninja' src='images/dead.png'>
+        <div class = 'ninja'>
+          <%= image_tag "dead.png" %>
+        </div>
         <% end %>
       </div>
       <div class="status_bar clearfix">
@@ -27,9 +33,10 @@
       </div>
       <% if player.alive? %>
       <div class ='kill_button_wrapper'>
-        <form action="/status" method="post">
+        <form action="/players/delete" method="post">
           <input type="hidden" name="_method" value="DELETE">
           <input type="hidden" name="player[id]" value="<%= player.id %>">
+          <input type="hidden" name="game[id]" value="<%= @game.id %>">
           <input class ='kill_button_wrapper' type="submit" value="KILL ME">
         </form>
       </div>

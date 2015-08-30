@@ -5,10 +5,11 @@ class GamePlayersController < ApplicationController
   # end
 
   def new
-    byebug
+    # byebug
     id = params['game']['id']
-    Game.find(id).start(params)
-    redirect '/games/show/#{id}'
+    @game = Game.find(id).start(params)
+    @id = id
+    redirect_to "/games/#{id}"
   end
 
 end

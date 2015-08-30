@@ -9,7 +9,7 @@ class GamesController < ApplicationController
   end
 
   def show
-    @players = Game.find(:id).all 
+    @game = Game.find(params[:id])
   end
 
 end
