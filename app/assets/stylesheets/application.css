@@ -23,9 +23,13 @@
 }
 
 body {
+<<<<<<< HEAD
   background-color: #53BCDD;
+=======
+  background-color: #74BBD7;
+>>>>>>> 4c35e245cb38209df22b98dd03d71ab8fceabbf1
   text-align: center;
-  font-family: 'open sans';
+  font-family: 'Myriad Pro','Helvetica Neue', Helvetica;
   padding: 2%;
 	color: white;
 }
@@ -39,40 +43,46 @@ body {
 	line-height: 0;
 }
 
-.player_status_container {
+.super_wrapper {
   width: 29%;
   float: left;
-  margin-bottom: 3em;
   margin-right: 2%;
   margin-left: 2%;
-	background-color: white;
-	border: 1px black solid;
+  margin-top: 30px;
 }
 
-.player_wrapper {
-  width: 29%;
+.individual_game_container {
+  width: 40%;
   float: left;
-  margin-left: 2%;
-  margin-right: 2%;
-  border: 1px black solid;
+  margin-bottom: 3em;
+  margin-right: 5%;
+  margin-left: 5%;
+	background-color: white;
+  border-radius: 15px;
+}
+
+.player_name, .game_name {
+  vertical-align: center;
+  font-size: 2em;
+  width: 100%;
+	color: white;
+  border-radius: 15px 15px 0px 0px;
 }
 
 .player_name {
-  vertical-align: center;
-  font-size: 3em;
-  width: 100%;
   background-color: #3498DB;
-	color: white;
+}
+
+.game_name {
+  background-color: #e67e22;
+  margin-bottom: 15px;
+  padding: 15px;
 }
 
 .status_bar {
   background-color: #3498DB;
 	color: white;
-}
-
-.player_status, .player_kills {
-  border-right: 2px white;
-  width: 50%;
+  border-radius: 0px 0px 15px 15px;
 }
 
 .player_status, .player_kills {
@@ -81,25 +91,26 @@ body {
   float: left;
 }
 
-.kill_button_wrapper {
-  float: right;
-  margin: auto;
-  clear: both;
-  width: 100%;
-  background-color: #E74C3C;
-  font-size: 1.5em;
-  height: 45px;
+.kill_button {
+  border-radius: 5px;
+  padding: 15px 25px;
+  font-size: 22px;
+  margin: 20px;
+  color: #fff;
+  background-color: #e67e22;
 }
 
-.kill_button_wrapper:hover {
-  float: right;
-  margin: auto;
-  clear: both;
-  width: 100%;
-  background-color: #F39C12;
-  font-size: 1.5em;
-  height: 45px;
-	color: white;
+.kill_button_dead {
+  border-radius: 5px;
+  padding: 15px 25px;
+  font-size: 22px;
+  margin: 20px;
+  color: #fff;
+  background-color: #e67e22;
+}
+
+.kill_button:hover {
+  background-color: #E74C3C;
 }
 
 .dead_button_wrapper {
@@ -113,15 +124,16 @@ body {
   height: 45px;
 }
 
-.logo_image {
-  width: 15%;
+#logo_image {
+  /*width: 15%;*/
   float: left;
-  margin-bottom: 3em;
+  margin-bottom: -1em;
 }
 
 .ninja {
 	height: 200px;
   margin: auto;
+  margin-top: 2em;
 }
 
 .header {
@@ -139,8 +151,108 @@ body {
 }
 
 .content {
-  width: 100%;
-  clear: both
+  width: 80%;
+  clear: both;
+  margin: auto;
+}
+
+.list_players {
+  color: black;
+  font: 1em;
+}
+
+.list_players ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 25px;
+}
+
+.game_name a:link {
+  text-decoration: none;
+  color: white;
+}
+
+.game_name a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.game_index_title {
+  font-weight:bold;
+  font-size: 4em;
+  text-shadow: 0px 1px 2px rgba(255,255,255,.5);
+  color: #444;
+  text-align: center;
+  margin-bottom: 1em;
+  /*margin-top: 1em;*/
+}
+
+.player_status_container {
+  background-color: white;
+  border-radius: 15px;
+}
+
+.initial_input, {
+   font-family: 'Myriad Pro','Helvetica Neue', Helvetica;
+  font-weight:bold;
+  font-size: 25px;
+  text-shadow: 0px 1px 2px rgba(255,255,255,.5);
+  color: #444;
+  text-align:center;
+}
+
+.semi_button {
+  border-radius: 5px;
+  padding: 15px 25px;
+  font-size: 22px;
+  margin: 20px;
+  color: #fff;
+  background-color: #e67e22;
+}
+
+.input_box{
+  margin: 15px;
+	font-family: 'Myriad Pro','Helvetica Neue', Helvetica;
+  font-weight:bold;
+  font-size: 25px;
+  text-shadow: 0px 1px 2px rgba(255,255,255,.5);
+  color: #444;
+  text-align:center;
+}
+
+nav {
+ max-width: 960px;
+ mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff  25%, #ffffff  75%, rgba(255, 255, 255, 0) 100%);
+ margin: 0 auto;
+ padding: 30px 0px 60px 0px;
+}
+
+nav ul {
+ /*vertical-align: center;*/
+ text-align: center;
+ background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+ box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+nav ul li {
+ display: inline-block;
+}
+
+nav ul li a {
+ padding: 18px;
+ font-family: 'Myriad Pro','Helvetica Neue', Helvetica;
+ text-transform:uppercase;
+ color: rgba(0, 35, 122, 0.5);
+ font-size: 18px;
+ text-decoration: none;
+ display: block;
+}
+
+nav ul li a:hover {
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+ background: rgba(255, 255, 255, 0.1);
+ color: rgba(0, 35, 122, 0.7);
 }
 
 .initial_input {

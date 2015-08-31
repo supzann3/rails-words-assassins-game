@@ -1,0 +1,34 @@
+<nav>
+  <ul>
+    <li>
+       <li>
+       <%=link_to "CREATE A GAME", games_new_path%>
+    </li>
+    <li>
+      <%=link_to "VIEW A GAME", games_path%>
+    </li>
+  </ul>
+</nav>
+
+<div class="game_index_title">
+Your Games
+</div>
+
+<div class="content clearfix">
+  <% @games.each do |game| %>
+    <% if CurrentUser.last.is_a_player_of(game) %>
+      <div class="individual_game_container">
+        <div class='game_name'>
+          <%= link_to game.name.upcase, game_path(game) %>
+        </div>
+        <div class='list_players'>
+          <ul>
+            <% game.players.each do |player| %>
+              <li><%= player.name %> - <%= player.alive? ? "ALIVE" : "DECEASED" %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

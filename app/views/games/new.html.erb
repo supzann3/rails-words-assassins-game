@@ -1,7 +1,25 @@
+<header id="logo_image">
+
+  <%= image_tag("logo.jpg",size: "260x160", alt: "logo")%>
+
+</header>
+<nav>
+  <ul>
+    <li>
+       <li>
+       <%=link_to "CREATE A GAME", games_new_path%>
+    </li>
+    <li>
+      <%=link_to "VIEW A GAME", games_path%>
+    </li>
+  </ul>
+</nav>
+<div class="initial_input">
 <form action="/players/new" method="post">
-  <label>Game Title</label>
-  <input type = "text" name = "title">
-  <label>How many players would you like in your game?</label>
-  <input type = "text" name = "number">
-  <input type = "submit" value = "Create a New Game!">
+ <h2> <label>Game Title</label> </br> <h2>
+ <input type = "text" class= "input_box" name = "title"> </br>
+ <h2> <label>How many players would you like in your game?</label> </br> <h2>
+  <input type = "text" class= "input_box" name = "number"> </br>
+  <input class="semi_button" type = "submit" value = "Create a New Game!">
 </form>
+</div>

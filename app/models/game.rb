@@ -17,7 +17,6 @@ class Game < ActiveRecord::Base
   def initial_victim_id_assignment
     scramble = players.shuffle
     players_offset = scramble.rotate
-    # byebug
     Hash[scramble.zip(players_offset)].each do |assassin, victim|
       assassin.update_attribute(:victim_id, victim.id)
     end
@@ -30,6 +29,10 @@ class Game < ActiveRecord::Base
   def announce_winner
     winner = players.find_by(alive?: true).name
     players.each {|player| Email.new.winner_email(player.email, winner)}
+  end
+
+  def winner
+    game.players.where(alive?: true).name if !!winner?
   end
 
   def first_email
