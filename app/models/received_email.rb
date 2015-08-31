@@ -10,11 +10,13 @@ class ReceivedEmail < ActiveRecord::Base
       sender = (Player.find_by email: email.message.from)
 
       if !!sender
-        re.update_attribute(:subject, email.subject)
+        re.update_attribute(:from, email.message.from)
+        re.update_attribute(:subject, email.message.subject)
         re.update_attribute(:player_id, sender.id)
         sender.dies if re.contains_dead_words?
         sender.victim.confirm_death if re.contains_victory_words?
       end
+      email.read!
       email.delete!
     end
   end

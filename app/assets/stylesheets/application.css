@@ -23,7 +23,7 @@
 }
 
 body {
-  background-color: #53BCDD;
+  background-color: #74BBD7;
   text-align: center;
   font-family: 'Myriad Pro','Helvetica Neue', Helvetica;
   padding: 2%;
@@ -120,10 +120,10 @@ body {
   height: 45px;
 }
 
-.logo_image {
-  width: 15%;
+#logo_image {
+  /*width: 15%;*/
   float: left;
-  margin-bottom: 3em;
+  margin-bottom: -1em;
 }
 
 .ninja {
@@ -157,7 +157,7 @@ body {
   font: 1em;
 }
 
-ul {
+.list_players ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -181,7 +181,7 @@ ul {
   color: #444;
   text-align: center;
   margin-bottom: 1em;
-  margin-top: 1em;
+  /*margin-top: 1em;*/
 }
 
 .player_status_container {
@@ -190,7 +190,7 @@ ul {
 }
 
 .initial_input, {
- font-family: 'Myriad Pro','Helvetica Neue', Helvetica;
+   font-family: 'Myriad Pro','Helvetica Neue', Helvetica;
   font-weight:bold;
   font-size: 25px;
   text-shadow: 0px 1px 2px rgba(255,255,255,.5);
@@ -206,6 +206,7 @@ ul {
   color: #fff;
   background-color: #e67e22;
 }
+
 .input_box{
   margin: 15px;
 	font-family: 'Myriad Pro','Helvetica Neue', Helvetica;
@@ -214,4 +215,38 @@ ul {
   text-shadow: 0px 1px 2px rgba(255,255,255,.5);
   color: #444;
   text-align:center;
+}
+
+nav {
+ max-width: 960px;
+ mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff  25%, #ffffff  75%, rgba(255, 255, 255, 0) 100%);
+ margin: 0 auto;
+ padding: 30px 0px 60px 0px;
+}
+
+nav ul {
+ /*vertical-align: center;*/
+ text-align: center;
+ background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+ box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+nav ul li {
+ display: inline-block;
+}
+
+nav ul li a {
+ padding: 18px;
+ font-family: 'Myriad Pro','Helvetica Neue', Helvetica;
+ text-transform:uppercase;
+ color: rgba(0, 35, 122, 0.5);
+ font-size: 18px;
+ text-decoration: none;
+ display: block;
+}
+
+nav ul li a:hover {
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+ background: rgba(255, 255, 255, 0.1);
+ color: rgba(0, 35, 122, 0.7);
 }

@@ -1,12 +1,16 @@
+<div class="initial_input">
+
+</div>
 <form action="/game_players/new" method="post">
   <% @number.times do %>
   <div>
     <label for="name">Name</label>
-    <input id="name" type="text" name="player[name][]">
+    <input class="input_box" id="name" type="text" name="player[name][]">
     <label for="email">E-Mail</label>
-    <input id="email" type="text" name="player[email][]" >
+    <input class="input_box" id="email" type="text" name="player[email][]" >
   </div>
   <%end%>
   <input type="hidden" name="game[id]" value="<%= @game_id %>">
-  <input type="submit" value="Enter Players">
+  <input class="semi_button" type = "submit" value = "Submit">
 </form>
+</div>

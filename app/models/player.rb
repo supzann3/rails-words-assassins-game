@@ -1,6 +1,6 @@
 class Player < ActiveRecord::Base
   has_many :game_players
-  has_many :games, through: :game_players
+  has_one :game, through: :game_players
   has_many :received_emails
 
   def dies
@@ -10,7 +10,7 @@ class Player < ActiveRecord::Base
     self.update_attribute(:alive?, false)
     assassin.increase_kills
     reassign_victim_upon_successful_assassination
-    announce_winner if winner?
+    self.game.announce_winner if winner?
   end
 
   def increase_kills

@@ -1,3 +1,22 @@
+
+<header id="logo_image">
+
+  <%= image_tag("logo.jpg",size: "260x160", alt: "logo")%>
+
+</header>
+
+<nav>
+  <ul>
+    <li>
+       <li>
+       <%=link_to "CREATE A GAME", games_new_path%>
+    </li>
+    <li>
+      <%=link_to "VIEW A GAME", games_path%>
+    </li>
+  </ul>
+</nav>
+
 <div class="content clearfix">
   <% @game.players.sort.each do |player| %>
   <div class = "super_wrapper clearfix" >
